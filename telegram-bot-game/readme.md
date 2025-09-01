@@ -11,3 +11,8 @@ No limits (language or packages), just 1 prompt
 - make guide at final answer
 
 ## GLM 4.5
+
+`TELEGRAM_BOT_TOKEN="TOKEN" npm start`
+
+- Use node.js
+- Write that bot ready
