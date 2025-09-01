@@ -1,0 +1,46 @@
+version: '3.8'
+
+services:
+  tour-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: tour-planner-55-plus
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    networks:
+      - tour-planner-network
+
+  # Optional: Add a reverse proxy for production
+  nginx-proxy:
+    image: nginx:alpine
+    container_name: tour-planner-proxy
+    ports:
+      - "80:80"
+      - "443:443"
+    volumes:
+      - ./nginx-proxy.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+    depends_on:
+      - tour-planner
+    restart: unless-stopped
+    networks:
+      - tour-planner-network
+    profiles:
+      - proxy
+
+networks:
+  tour-planner-network:
+    driver: bridge
+
+volumes:
+  ssl:
