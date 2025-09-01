@@ -1,0 +1,19 @@
+{
+  "name": "telegram-guessing-game-bot",
+  "version": "1.0.0",
+  "description": "A Telegram bot that plays number guessing games with users",
+  "main": "bot.js",
+  "scripts": {
+    "start": "node bot.js",
+    "dev": "nodemon bot.js"
+  },
+  "keywords": ["telegram", "bot", "game", "number-guessing"],
+  "author": "",
+  "license": "MIT",
+  "dependencies": {
+    "node-telegram-bot-api": "^0.64.0"
+  },
+  "devDependencies": {
+    "nodemon": "^3.0.1"
+  }
+}
