@@ -1,0 +1,34 @@
+version: '3.8'
+
+services:
+  tour-planner:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: production
+    container_name: tour-planner-55plus
+    restart: unless-stopped
+    ports:
+      - "3000:80"
+    environment:
+      - NODE_ENV=production
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:80/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+    security_opt:
+      - no-new-privileges:true
+    read_only: true
+    tmpfs:
+      - /var/cache/nginx:noexec,nosuid,size=100m
+      - /var/run:noexec,nosuid,size=100m
+      - /tmp:noexec,nosuid,size=100m
+    networks:
+      - tour-network
+
+networks:
+  tour-network:
+    driver: bridge
+    name: tour-planner-network

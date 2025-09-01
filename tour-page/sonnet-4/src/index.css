@@ -1,0 +1,58 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  html {
+    font-size: 18px;
+  }
+  
+  body {
+    @apply text-gray-800 bg-gray-50 antialiased;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+      'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+      sans-serif;
+    line-height: 1.6;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply text-gray-900 font-semibold;
+  }
+
+  button:focus,
+  input:focus,
+  select:focus,
+  textarea:focus {
+    @apply outline-none ring-2 ring-primary-500 ring-opacity-50;
+  }
+}
+
+@layer components {
+  .btn-primary {
+    @apply bg-primary-600 hover:bg-primary-700 text-white font-medium py-3 px-6 rounded-senior transition-colors duration-200 focus:ring-2 focus:ring-primary-500 focus:ring-opacity-50;
+  }
+
+  .btn-secondary {
+    @apply bg-gray-200 hover:bg-gray-300 text-gray-800 font-medium py-3 px-6 rounded-senior transition-colors duration-200 focus:ring-2 focus:ring-gray-500 focus:ring-opacity-50;
+  }
+
+  .card {
+    @apply bg-white rounded-senior shadow-md border border-gray-200 p-senior;
+  }
+
+  .input-field {
+    @apply w-full px-4 py-3 text-senior-base border border-gray-300 rounded-senior focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors duration-200;
+  }
+
+  .accessibility-high {
+    @apply bg-green-100 text-green-800 border-green-200;
+  }
+
+  .accessibility-medium {
+    @apply bg-yellow-100 text-yellow-800 border-yellow-200;
+  }
+
+  .accessibility-low {
+    @apply bg-red-100 text-red-800 border-red-200;
+  }
+}
