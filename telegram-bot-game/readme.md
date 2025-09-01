@@ -4,6 +4,7 @@ Create a Telegram bot that plays a number-guessing game with each user. The bot 
 No limits (language or packages), just 1 prompt
 
 ## Sonnet 4
+`TELEGRAM_BOT_TOKEN="TOKEN" npm start`
 
 - Use node.js
 - run validation for code
