@@ -6,3 +6,7 @@ Create a landing page for the product: I want a Vas3k-style page that explains t
 `sonnet-4/index.html`
 
 ## glm 4.5
+`glm4-5/index.html`
+
+## gpt-5-high
+`gpt-5/index.html`
