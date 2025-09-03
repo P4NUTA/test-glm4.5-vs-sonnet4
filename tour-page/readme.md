@@ -88,3 +88,18 @@ Tour Planner 55+ for Leningrad Oblast - Implementation Plan
      - Comprehensive testing setup
 
      The application will use React with TypeScript, Vite for build tooling, and will be fully containerized for production deployment.
+
+## gpt-5
+
+Codex don't have plan mode
+
+    Post-Mortem
+    
+    - Assumptions: Start/end in Saint Petersburg; 55+ means avoid high stairs; budget approximations (meals and transport heuristics) and travel times via haversine at typical road speeds; rainy-day alternatives prefer indoor venues not already used that day.
+      - Trade-offs: Deterministic, heuristic planner over exact optimization; minimal dataset sized for demo; single container architecture to simplify ops; vanilla SPA to keep it lightweight.
+      - Potential improvements:
+          - Expand dataset with more venues and richer accessibility metadata.
+          - Time-window constraints (opening hours), calendar awareness, and weekday-specific closures.
+          - Multi-objective scoring (comfort, diversity) with user-adjustable weights.
+          - Persist user presets client-side; printable PDF itinerary export.
+          - Add unit tests and CI, and parameterize more costs per region.

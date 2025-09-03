@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Планировщик тура 55+ — Ленинградская область</title>
+    <link rel="icon" href="/static/favicon.svg" />
+    <link rel="stylesheet" href="/static/styles.css" />
+  </head>
+  <body>
+    <header>
+      <div class="brand">
+        <img src="/static/favicon.svg" alt="logo" />
+        <h1 id="title">Планировщик тура 55+ — Ленинградская область</h1>
+      </div>
+      <div class="lang-switch">
+        <label for="lang">Язык:</label>
+        <select id="lang">
+          <option value="ru" selected>Русский</option>
+          <option value="en">English</option>
+        </select>
+      </div>
+    </header>
+
+    <main>
+      <section class="controls">
+        <div class="field">
+          <label for="days" id="lbl-days">Длительность (дней)</label>
+          <select id="days">
+            <option value="1">1</option>
+            <option value="2" selected>2</option>
+            <option value="3">3</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="budget" id="lbl-budget">Бюджет</label>
+          <select id="budget">
+            <option value="economy">Эконом</option>
+            <option value="standard" selected>Стандарт</option>
+            <option value="comfort">Комфорт</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="mobility" id="lbl-mobility">Доступность</label>
+          <select id="mobility">
+            <option value="strict" selected>Мало лестниц</option>
+            <option value="normal">Обычная</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="seed" id="lbl-seed">Seed</label>
+          <input id="seed" type="number" value="42" />
+        </div>
+        <div class="actions">
+          <button id="btn-generate">Сгенерировать</button>
+        </div>
+      </section>
+
+      <section id="error" class="hidden"></section>
+
+      <section id="result" class="hidden"></section>
+    </main>
+
+    <footer>
+      <small id="footnote">Локальные данные. Без внешних API.</small>
+    </footer>
+
+    <script src="/static/app.js"></script>
+  </body>
+  </html>

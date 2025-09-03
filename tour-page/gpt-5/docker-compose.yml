@@ -1,0 +1,19 @@
+version: "3.9"
+services:
+  planner:
+    build: .
+    image: tour-planner-55
+    container_name: tour-planner-55
+    environment:
+      - APP_PORT=8000
+      - APP_WORKERS=2
+      - APP_DEFAULT_LANGUAGE=ru
+      - APP_SEED=42
+    ports:
+      - "8080:8000"
+    healthcheck:
+      test: ["CMD", "curl", "-fsS", "http://127.0.0.1:8000/healthz"]
+      interval: 30s
+      timeout: 5s
+      retries: 3
+    restart: unless-stopped
